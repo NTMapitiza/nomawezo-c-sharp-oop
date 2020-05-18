@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{F16B9DBD-0708-4690-B92F-661790D64E2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETBdb", "ETBdb\ETBdb.csproj", "{75AD31EE-9245-4B2F-A0D9-C3BDAB390ED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F16B9DBD-0708-4690-B92F-661790D64E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F16B9DBD-0708-4690-B92F-661790D64E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F16B9DBD-0708-4690-B92F-661790D64E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F16B9DBD-0708-4690-B92F-661790D64E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75AD31EE-9245-4B2F-A0D9-C3BDAB390ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75AD31EE-9245-4B2F-A0D9-C3BDAB390ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75AD31EE-9245-4B2F-A0D9-C3BDAB390ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75AD31EE-9245-4B2F-A0D9-C3BDAB390ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2A373FA4-F7F7-4463-95CC-9379F84573AE}
+		SolutionGuid = {5234727F-2E82-4848-89CE-DB10F15CDE5C}
 	EndGlobalSection
 EndGlobal
