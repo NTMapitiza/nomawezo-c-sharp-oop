@@ -285,7 +285,7 @@
             this.employeeBindingNavigatorSaveItem.Name = "employeeBindingNavigatorSaveItem";
             this.employeeBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.employeeBindingNavigatorSaveItem.Text = "Save Data";
-            this.employeeBindingNavigatorSaveItem.Click += new System.EventHandler(this.employeeBindingNavigatorSaveItem_Click_4);
+            this.employeeBindingNavigatorSaveItem.Click += new System.EventHandler(this.employeeBindingNavigatorSaveItem_Click);
             // 
             // txtEmpID
             // 
