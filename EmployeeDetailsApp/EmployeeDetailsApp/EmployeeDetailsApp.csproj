@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{801A9FFE-FB90-45DC-8208-17D5E388E513}</ProjectGuid>
+    <ProjectGuid>{0425574D-6EA8-4B7A-8FE0-28CBB786959C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>EmployeeDetailsApp</RootNamespace>
     <AssemblyName>EmployeeDetailsApp</AssemblyName>
@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ETBdbDataSet.cs">
+      <DependentUpon>ETBdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ETBdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

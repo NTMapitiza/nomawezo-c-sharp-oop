@@ -16,7 +16,7 @@ namespace EmployeeDetailsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEmployeeDetails());
+            Application.Run(new Form1());
         }
     }
 }

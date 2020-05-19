@@ -1,6 +1,6 @@
 ﻿namespace EmployeeDetailsApp
 {
-    partial class frmEmployeeDetails
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label employeeIDLabel;
             System.Windows.Forms.Label firstNameLabel;
-            System.Windows.Forms.Label lastNameLabel;
+            System.Windows.Forms.Label surnameLabel;
             System.Windows.Forms.Label departmentLabel;
             System.Windows.Forms.Label startDateLabel;
             System.Windows.Forms.Label salaryLabel;
             System.Windows.Forms.Label managerIndLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployeeDetails));
-            this.eTBdbDataSet = new EmployeeDetailsApp.ETBdbDataSet();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeTableAdapter = new EmployeeDetailsApp.ETBdbDataSetTableAdapters.EmployeeTableAdapter();
-            this.tableAdapterManager = new EmployeeDetailsApp.ETBdbDataSetTableAdapters.TableAdapterManager();
             this.employeeBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.employeeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.txtEmpID = new System.Windows.Forms.TextBox();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
-            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtDept = new System.Windows.Forms.TextBox();
             this.txtStartDate = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtManagerInd = new System.Windows.Forms.TextBox();
@@ -65,101 +61,22 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eTBdbDataSet = new EmployeeDetailsApp.ETBdbDataSet();
+            this.employeeTableAdapter = new EmployeeDetailsApp.ETBdbDataSetTableAdapters.EmployeeTableAdapter();
+            this.tableAdapterManager = new EmployeeDetailsApp.ETBdbDataSetTableAdapters.TableAdapterManager();
             employeeIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
-            lastNameLabel = new System.Windows.Forms.Label();
+            surnameLabel = new System.Windows.Forms.Label();
             departmentLabel = new System.Windows.Forms.Label();
             startDateLabel = new System.Windows.Forms.Label();
             salaryLabel = new System.Windows.Forms.Label();
             managerIndLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.eTBdbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
             this.employeeBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eTBdbDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // employeeIDLabel
-            // 
-            employeeIDLabel.AutoSize = true;
-            employeeIDLabel.Location = new System.Drawing.Point(32, 119);
-            employeeIDLabel.Name = "employeeIDLabel";
-            employeeIDLabel.Size = new System.Drawing.Size(57, 17);
-            employeeIDLabel.TabIndex = 1;
-            employeeIDLabel.Text = "Emp ID:";
-            // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(32, 147);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(112, 17);
-            firstNameLabel.TabIndex = 3;
-            firstNameLabel.Text = "Emp First Name:";
-            // 
-            // lastNameLabel
-            // 
-            lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(32, 175);
-            lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(101, 17);
-            lastNameLabel.TabIndex = 5;
-            lastNameLabel.Text = "Emp Surname:";
-            // 
-            // departmentLabel
-            // 
-            departmentLabel.AutoSize = true;
-            departmentLabel.Location = new System.Drawing.Point(32, 203);
-            departmentLabel.Name = "departmentLabel";
-            departmentLabel.Size = new System.Drawing.Size(74, 17);
-            departmentLabel.TabIndex = 7;
-            departmentLabel.Text = "Emp Dept:";
-            // 
-            // startDateLabel
-            // 
-            startDateLabel.AutoSize = true;
-            startDateLabel.Location = new System.Drawing.Point(32, 231);
-            startDateLabel.Name = "startDateLabel";
-            startDateLabel.Size = new System.Drawing.Size(108, 17);
-            startDateLabel.TabIndex = 9;
-            startDateLabel.Text = "Emp Start Date:";
-            // 
-            // salaryLabel
-            // 
-            salaryLabel.AutoSize = true;
-            salaryLabel.Location = new System.Drawing.Point(32, 259);
-            salaryLabel.Name = "salaryLabel";
-            salaryLabel.Size = new System.Drawing.Size(84, 17);
-            salaryLabel.TabIndex = 11;
-            salaryLabel.Text = "Emp Salary:";
-            // 
-            // managerIndLabel
-            // 
-            managerIndLabel.AutoSize = true;
-            managerIndLabel.Location = new System.Drawing.Point(32, 287);
-            managerIndLabel.Name = "managerIndLabel";
-            managerIndLabel.Size = new System.Drawing.Size(59, 17);
-            managerIndLabel.TabIndex = 13;
-            managerIndLabel.Text = "Mgr Ind:";
-            // 
-            // eTBdbDataSet
-            // 
-            this.eTBdbDataSet.DataSetName = "ETBdbDataSet";
-            this.eTBdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.eTBdbDataSet;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter;
-            this.tableAdapterManager.UpdateOrder = EmployeeDetailsApp.ETBdbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // employeeBindingNavigator
             // 
@@ -188,34 +105,9 @@
             this.employeeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.employeeBindingNavigator.Name = "employeeBindingNavigator";
             this.employeeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.employeeBindingNavigator.Size = new System.Drawing.Size(499, 27);
+            this.employeeBindingNavigator.Size = new System.Drawing.Size(450, 27);
             this.employeeBindingNavigator.TabIndex = 0;
             this.employeeBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -250,9 +142,16 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -275,8 +174,26 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // employeeBindingNavigatorSaveItem
             // 
@@ -287,123 +204,201 @@
             this.employeeBindingNavigatorSaveItem.Text = "Save Data";
             this.employeeBindingNavigatorSaveItem.Click += new System.EventHandler(this.employeeBindingNavigatorSaveItem_Click);
             // 
-            // txtEmpID
+            // employeeIDLabel
             // 
-            this.txtEmpID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "EmployeeID", true));
-            this.txtEmpID.Location = new System.Drawing.Point(163, 116);
-            this.txtEmpID.Name = "txtEmpID";
-            this.txtEmpID.Size = new System.Drawing.Size(100, 22);
-            this.txtEmpID.TabIndex = 1;
+            employeeIDLabel.AutoSize = true;
+            employeeIDLabel.Location = new System.Drawing.Point(47, 73);
+            employeeIDLabel.Name = "employeeIDLabel";
+            employeeIDLabel.Size = new System.Drawing.Size(91, 17);
+            employeeIDLabel.TabIndex = 12;
+            employeeIDLabel.Text = "Employee ID:";
+            // 
+            // txtEmployeeID
+            // 
+            this.txtEmployeeID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "EmployeeID", true));
+            this.txtEmployeeID.Location = new System.Drawing.Point(159, 70);
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.Size = new System.Drawing.Size(134, 22);
+            this.txtEmployeeID.TabIndex = 1;
+            // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(47, 101);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(80, 17);
+            firstNameLabel.TabIndex = 13;
+            firstNameLabel.Text = "First Name:";
             // 
             // txtFirstName
             // 
             this.txtFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "FirstName", true));
-            this.txtFirstName.Location = new System.Drawing.Point(163, 144);
+            this.txtFirstName.Location = new System.Drawing.Point(159, 98);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 22);
-            this.txtFirstName.TabIndex = 4;
+            this.txtFirstName.Size = new System.Drawing.Size(134, 22);
+            this.txtFirstName.TabIndex = 2;
+            // 
+            // surnameLabel
+            // 
+            surnameLabel.AutoSize = true;
+            surnameLabel.Location = new System.Drawing.Point(47, 129);
+            surnameLabel.Name = "surnameLabel";
+            surnameLabel.Size = new System.Drawing.Size(69, 17);
+            surnameLabel.TabIndex = 14;
+            surnameLabel.Text = "Surname:";
             // 
             // txtSurname
             // 
-            this.txtSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "LastName", true));
-            this.txtSurname.Location = new System.Drawing.Point(163, 172);
+            this.txtSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Surname", true));
+            this.txtSurname.Location = new System.Drawing.Point(159, 126);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(100, 22);
-            this.txtSurname.TabIndex = 6;
+            this.txtSurname.Size = new System.Drawing.Size(134, 22);
+            this.txtSurname.TabIndex = 3;
             // 
-            // txtDepartment
+            // departmentLabel
             // 
-            this.txtDepartment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Department", true));
-            this.txtDepartment.Location = new System.Drawing.Point(163, 200);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(100, 22);
-            this.txtDepartment.TabIndex = 8;
+            departmentLabel.AutoSize = true;
+            departmentLabel.Location = new System.Drawing.Point(47, 157);
+            departmentLabel.Name = "departmentLabel";
+            departmentLabel.Size = new System.Drawing.Size(86, 17);
+            departmentLabel.TabIndex = 15;
+            departmentLabel.Text = "Department:";
+            // 
+            // txtDept
+            // 
+            this.txtDept.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Department", true));
+            this.txtDept.Location = new System.Drawing.Point(159, 154);
+            this.txtDept.Name = "txtDept";
+            this.txtDept.Size = new System.Drawing.Size(134, 22);
+            this.txtDept.TabIndex = 4;
+            // 
+            // startDateLabel
+            // 
+            startDateLabel.AutoSize = true;
+            startDateLabel.Location = new System.Drawing.Point(47, 185);
+            startDateLabel.Name = "startDateLabel";
+            startDateLabel.Size = new System.Drawing.Size(76, 17);
+            startDateLabel.TabIndex = 16;
+            startDateLabel.Text = "Start Date:";
             // 
             // txtStartDate
             // 
             this.txtStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "StartDate", true));
-            this.txtStartDate.Location = new System.Drawing.Point(163, 228);
+            this.txtStartDate.Location = new System.Drawing.Point(159, 182);
             this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.Size = new System.Drawing.Size(100, 22);
-            this.txtStartDate.TabIndex = 10;
+            this.txtStartDate.Size = new System.Drawing.Size(134, 22);
+            this.txtStartDate.TabIndex = 5;
+            // 
+            // salaryLabel
+            // 
+            salaryLabel.AutoSize = true;
+            salaryLabel.Location = new System.Drawing.Point(47, 213);
+            salaryLabel.Name = "salaryLabel";
+            salaryLabel.Size = new System.Drawing.Size(52, 17);
+            salaryLabel.TabIndex = 17;
+            salaryLabel.Text = "Salary:";
             // 
             // txtSalary
             // 
             this.txtSalary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Salary", true));
-            this.txtSalary.Location = new System.Drawing.Point(163, 256);
+            this.txtSalary.Location = new System.Drawing.Point(159, 210);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(100, 22);
-            this.txtSalary.TabIndex = 12;
+            this.txtSalary.Size = new System.Drawing.Size(134, 22);
+            this.txtSalary.TabIndex = 6;
+            // 
+            // managerIndLabel
+            // 
+            managerIndLabel.AutoSize = true;
+            managerIndLabel.Location = new System.Drawing.Point(47, 241);
+            managerIndLabel.Name = "managerIndLabel";
+            managerIndLabel.Size = new System.Drawing.Size(91, 17);
+            managerIndLabel.TabIndex = 18;
+            managerIndLabel.Text = "Manager Ind:";
             // 
             // txtManagerInd
             // 
             this.txtManagerInd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ManagerInd", true));
-            this.txtManagerInd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManagerInd.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtManagerInd.Location = new System.Drawing.Point(163, 284);
+            this.txtManagerInd.Location = new System.Drawing.Point(159, 238);
             this.txtManagerInd.Name = "txtManagerInd";
-            this.txtManagerInd.Size = new System.Drawing.Size(100, 26);
-            this.txtManagerInd.TabIndex = 14;
-            this.txtManagerInd.TabStop = false;
-            this.txtManagerInd.Text = "False";
+            this.txtManagerInd.Size = new System.Drawing.Size(134, 22);
+            this.txtManagerInd.TabIndex = 7;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(358, 119);
+            this.btnAdd.Location = new System.Drawing.Point(334, 70);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(91, 30);
-            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Size = new System.Drawing.Size(94, 30);
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(358, 155);
+            this.btnUpdate.Location = new System.Drawing.Point(334, 103);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(91, 37);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Size = new System.Drawing.Size(94, 34);
+            this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(358, 200);
+            this.btnDelete.Location = new System.Drawing.Point(334, 143);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 36);
-            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Size = new System.Drawing.Size(94, 31);
+            this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(358, 242);
+            this.btnClear.Location = new System.Drawing.Point(334, 182);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(91, 34);
-            this.btnClear.TabIndex = 18;
+            this.btnClear.Size = new System.Drawing.Size(94, 33);
+            this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // frmEmployeeDetails
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.eTBdbDataSet;
+            // 
+            // eTBdbDataSet
+            // 
+            this.eTBdbDataSet.DataSetName = "ETBdbDataSet";
+            this.eTBdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter;
+            this.tableAdapterManager.UpdateOrder = EmployeeDetailsApp.ETBdbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 374);
+            this.ClientSize = new System.Drawing.Size(450, 327);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(employeeIDLabel);
-            this.Controls.Add(this.txtEmpID);
+            this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(firstNameLabel);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(lastNameLabel);
+            this.Controls.Add(surnameLabel);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(departmentLabel);
-            this.Controls.Add(this.txtDepartment);
+            this.Controls.Add(this.txtDept);
             this.Controls.Add(startDateLabel);
             this.Controls.Add(this.txtStartDate);
             this.Controls.Add(salaryLabel);
@@ -411,14 +406,14 @@
             this.Controls.Add(managerIndLabel);
             this.Controls.Add(this.txtManagerInd);
             this.Controls.Add(this.employeeBindingNavigator);
-            this.Name = "frmEmployeeDetails";
-            this.Text = "Employee Details";
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.eTBdbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).EndInit();
             this.employeeBindingNavigator.ResumeLayout(false);
             this.employeeBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eTBdbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,10 +438,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton employeeBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox txtEmpID;
+        private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.TextBox txtDept;
         private System.Windows.Forms.TextBox txtStartDate;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtManagerInd;
