@@ -18,7 +18,6 @@ namespace EmployeeDetailsApp
         public frmEmployeeDetails()
         {
             InitializeComponent();
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,7 +25,10 @@ namespace EmployeeDetailsApp
             try
             {
                 this.employeeTableAdapter.Fill(this.eTBdbDataSet.Employee);
-                
+                this.employeeBindingSource.MoveFirst();
+                int position = employeeBindingSource.Position + 1;
+                txtPosition.Text = position + " of " + employeeBindingSource.Count;
+
             }
             catch (SqlException ex)
             {
@@ -81,23 +83,17 @@ namespace EmployeeDetailsApp
         string surname = "";
         string department = "";
         DateTime startDate;
-        //decimal salary = 0.0M;
         string salary = "";
         bool managerInd = false;
 
         private void populateRecord()
         {
-                
             employeeID = Convert.ToInt32(txtEmployeeID.Text);
             firstName = txtFirstName.Text;
             surname = txtSurname.Text;
             department = txtDepartment.Text;
             startDate = Convert.ToDateTime(txtStartDate.Text);
             salary = txtSalary.Text;
-            //salary = Convert.ToDecimal(txtSalary.Text);
-            //NumberFormatInfo LocalFormat = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-            //LocalFormat.CurrencySymbol = "£";
-            //txtSalary.Text = salary.ToString("C", LocalFormat);
 
             if (chkManagerInd.Checked)
             {
@@ -107,41 +103,44 @@ namespace EmployeeDetailsApp
             {
                 managerInd = false;
             }
-              
         }     
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
             populateRecord();
 
-            string insertStatement = "INSERT INTO Employee" +
+            if (IsWithinRange() == true)
+            {
+                string insertStatement = "INSERT INTO Employee" +
                 " (EmployeeID, FirstName, Surname, Department, StartDate, Salary, ManagerInd) " +
                 " VALUES (@EmployeeID, @FirstName, @Surname, @Department, @StartDate, @Salary, @ManagerInd);";
-            SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
-            insertCommand.Parameters.AddWithValue("@EmployeeID", employeeID);
-            insertCommand.Parameters.AddWithValue("@FirstName", firstName);
-            insertCommand.Parameters.AddWithValue("@Surname", surname);
-            insertCommand.Parameters.AddWithValue("@Department", department);
-            insertCommand.Parameters.AddWithValue("@StartDate", startDate);
-            insertCommand.Parameters.AddWithValue("@Salary", salary);
-            insertCommand.Parameters.AddWithValue("@ManagerInd", managerInd);
+                SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
+                insertCommand.Parameters.AddWithValue("@EmployeeID", employeeID);
+                insertCommand.Parameters.AddWithValue("@FirstName", firstName);
+                insertCommand.Parameters.AddWithValue("@Surname", surname);
+                insertCommand.Parameters.AddWithValue("@Department", department);
+                insertCommand.Parameters.AddWithValue("@StartDate", startDate);
+                insertCommand.Parameters.AddWithValue("@Salary", salary);
+                insertCommand.Parameters.AddWithValue("@ManagerInd", managerInd);
 
-            try
-            {
-                connection.Open();
-                int employeeCount = insertCommand.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
+                try
+                {
+                    connection.Open();
+                    int employeeCount = insertCommand.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                MessageBox.Show("Record Inserted", "Information");
             }
-            finally
-            {
-                connection.Close();
-            }
-            MessageBox.Show("Record Inserted", "Information");
         }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             populateRecord();
@@ -167,7 +166,6 @@ namespace EmployeeDetailsApp
             }
             catch (SqlException ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -175,7 +173,6 @@ namespace EmployeeDetailsApp
                 connection.Close();
             }
             MessageBox.Show("Record Updated", "Information");
-               
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -194,7 +191,6 @@ namespace EmployeeDetailsApp
             }
             catch (SqlException ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -202,7 +198,6 @@ namespace EmployeeDetailsApp
                 connection.Close();
             }
             MessageBox.Show("Record Deleted", "Information");
-            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -227,12 +222,10 @@ namespace EmployeeDetailsApp
                 txtStartDate.Text = empReader["StartDate"].ToString();
                 txtSalary.Text = empReader["Salary"].ToString();
                 chkManagerInd.Text = empReader["ManagerInd"].ToString();
-
             }
             MessageBox.Show("Record Selected!");
 
             empReader.Close();
-
         }
 
         private const string textPrefix = @"Dept:";
@@ -248,6 +241,48 @@ namespace EmployeeDetailsApp
         private void txtDepartment_Enter(object sender, EventArgs e)
         {
             txtDepartment.SelectionStart = txtDepartment.Text.Length;
-        }             
+        }
+
+        private void btnFirstRow_Click(object sender, EventArgs e)
+        {
+            this.employeeBindingSource.MoveFirst();
+            int position = employeeBindingSource.Position + 1;
+            txtPosition.Text = position + " of " + employeeBindingSource.Count;
+        }
+
+        private void btnPreviousRow_Click(object sender, EventArgs e)
+        {
+            this.employeeBindingSource.MovePrevious();
+            int position = employeeBindingSource.Position + 1;
+            txtPosition.Text = position + " of " + employeeBindingSource.Count;
+        }
+
+        private void btnNextRow_Click(object sender, EventArgs e)
+        {
+            this.employeeBindingSource.MoveNext();
+            int position = employeeBindingSource.Position + 1;
+            txtPosition.Text = position + " of " + employeeBindingSource.Count;
+        }
+
+        private void btnLastRow_Click(object sender, EventArgs e)
+        {
+            this.employeeBindingSource.MoveLast();
+            int position = employeeBindingSource.Position + 1;
+            txtPosition.Text = position + " of " + employeeBindingSource.Count;
+        }
+        public bool IsWithinRange()
+        {
+            int employeeNumber = Convert.ToInt32(txtEmployeeID.Text);
+            if (employeeNumber <= 0 || employeeNumber > 20000)
+            {
+                MessageBox.Show("Employee ID must be between 00001 and 20000", "Error Entry");
+                txtEmployeeID.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
