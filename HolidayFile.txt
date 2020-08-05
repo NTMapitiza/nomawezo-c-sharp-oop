@@ -1,23 +1,25 @@
 			 Downton Travel 			 Page 1
-			  Date 22/06/2020
+			  Date 23/06/2020
 
 
 Holiday No  Destination            Departure Date       Cost  Available 
 
-205 	    Cape Town 		   12/09/2008 	     £259.99  True 
-210 	    Madrid 		   10/05/2008 	     £375.00  True 
-211 	    Paris 		   18/08/2008 	     £450.00  True 
-212 	    Lisbon 		   05/05/2008 	     £199.99  True 
-213 	    Amsterdam 		   03/04/2008 	     £99.99  True 
-214 	    Barcelona 		   16/07/2008 	     £189.99  True 
-215 	    Paris 		   23/07/2008 	     £159.99  False 
-216 	    Lisbon 		   17/05/2008 	     £359.99  True 
-217 	    Hamburg 		   18/06/2008 	     £299.99  True 
-218 	    Rotterdam 		   25/05/2008 	     £399.99  False 
-219 	    Brussels 		   12/05/2008 	     £159.99  True 
-220 	    Amsterdam 		   29/09/2008 	     £299.99  True 
-222 	    Barcelona 		   13/06/2008 	     £459.99  True 
-224 	    Madrid 		   18/04/2008 	     £259.99  True 
-225 	    Venice 		   26/07/2008 	     £299.99  True 
-226 	    Edinburgh 		   16/05/2008 	     £299.99  False 
-227 	    Hamburg 		   17/08/2008 	     £459.99  True 
+210 	    Madrid 		   10/05/2008 	     £375.00  Yes 
+211 	    Paris 		   18/08/2008 	     £450.00  Yes 
+212 	    Lisbon 		   05/05/2008 	     £199.99  Yes 
+213 	    Amsterdam 		   03/04/2008 	     £99.99  Yes 
+214 	    Barcelona 		   16/07/2008 	     £189.99  Yes 
+215 	    Paris 		   23/07/2008 	     £159.99  No 
+216 	    Lisbon 		   17/05/2008 	     £359.99  Yes 
+217 	    Hamburg 		   18/06/2008 	     £299.99  Yes 
+218 	    Rotterdam 		   25/05/2008 	     £399.99  No 
+219 	    Brussels 		   12/05/2008 	     £159.99  Yes 
+220 	    Amsterdam 		   29/09/2008 	     £299.99  Yes 
+222 	    Barcelona 		   13/06/2008 	     £459.99  Yes 
+224 	    Madrid 		   18/04/2008 	     £259.99  Yes 
+225 	    Venice 		   26/07/2008 	     £299.99  Yes 
+226 	    Edinburgh 		   16/05/2008 	     £299.99  No 
+230 	    Hamburg 		   17/08/2008 	     £459.99  Yes 
+240 	    Hamburg 		   17/08/2008 	     £459.99  Yes 
+250 	    Cape Town 		   12/09/2008 	     £259.99  Yes 
+310 	    Barcelona 		   12/09/2008 	     £259.99  Yes 
